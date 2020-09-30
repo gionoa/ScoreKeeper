@@ -10,3 +10,14 @@ jobs:
     - uses: actions/checkout@master
     - name: Run Script
       run: echo Hello,  Gio!
+
+  lint:
+    name: Swiftlint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install Swiftlint
+      run: |
+        brew install swiftlint
+        swiftlint autocorrect
+        echo Linting done

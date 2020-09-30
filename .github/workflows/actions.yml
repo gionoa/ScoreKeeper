@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Script
-      run: echo Hello, Gio!
+      run: echo Hello,  Gio!

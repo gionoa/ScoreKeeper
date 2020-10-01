@@ -22,12 +22,10 @@ jobs:
         status: starting
       if: always()
     - uses: actions/checkout@master
-    
-    - name: |
-      run:
-        brew install swiftlint
-        swiftlint autocorrect
-        
+    - name: Install Swiftlint
+      run: brew install swiftlint
+    - name: Run Swiftlint
+      run: swiftlint autocorrect
     - uses: act10ns/slack@v1
       with:
         status: ${{ job.status }}
